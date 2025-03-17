@@ -29,99 +29,152 @@ This project is a **Secure URL Shortener**, designed as a **practical web script
 
 Each milestone represents **a distinct phase** of the project, **ensuring progress is trackable and adaptable**.
 
-### **📅 Milestone 1: Basic UI & Input Handling (3 Hours)**
-✅ Set up **`index.html`**, **`app.js`**, and **`app.css`**.  
-✅ Create **a clean, functional UI** with an **input field, button, and result area**.  
-✅ Implement **basic validation** to check if a user enters a URL.  
-✅ Display a **fake shortened URL** for now (without Firebase integration).  
+## **📅 Day 1: Project Setup & UI (3h)**
+### **🔹 Priority: HIGH**  
+✅ Set up the project folder (`index.html`, `styles.css`, `script.js`).  
+✅ Create a **clean UI**: input box, shorten button, result area.  
+✅ Implement **basic URL validation** (check for `https://`).  
+✅ Display a **fake shortened URL** on button press.
 
-**🎯 Milestone Goal:** Have a **working form** that accepts URLs and outputs a shortened format.
+**🎯 Milestone:** Basic UI and form are functional. ✅
 
-🎁 **Bonus (If Time Allows):**  
-- Add a **copy-to-clipboard button** so users can quickly copy their shortened URL.  
-- Add **basic dark/light mode support** (simple styling toggle).  
-
----
-
-### **📅 Milestone 2: Implement Short URL Generation (3 Hours)**
-✅ Write a function to **generate random 6-character short codes**.  
-✅ Ensure **codes are always unique** using a hash function.  
-✅ Modify the UI to **display the generated short link**.  
-
-**🎯 Milestone Goal:** The application generates **realistic, unique short codes**.
-
-🎁 **Bonus:**  
-- Display an **error message if input is empty or invalid**.  
+### **🎁 Bonus Tasks (If Finished Early):**
+✅ Implement **basic form validation** to ensure empty submissions are not allowed.
+✅ Add a **clipboard copy button** so users can quickly copy the shortened URL.
 
 ---
 
-### **📅 Milestone 3: Firebase Integration – Store URLs (3 Hours)**
-✅ Set up Firebase and **connect the database to JavaScript**.  
-✅ Store `{ shortCode: "abc123", originalUrl: "https://example.com" }` in Firestore.  
-✅ Retrieve and **log stored URLs** from Firebase when requested.  
+## **📅 Day 2: Firebase Integration (3h)**
+### **🔹 Priority: HIGH**  
+✅ Create a Firebase **Firestore database**.  
+✅ Set up Firebase project & API key in `script.js`.
 
-**🎯 Milestone Goal:** Shortened links **persist across sessions and devices**.
+✅ Store `{ shortCode: "abc123", originalUrl: "https://example.com" }` in Firestore.
+ **Retrieve and log stored URLs** from Firestore.
 
-🎁 **Bonus:**  
-- Implement a **collision check** to prevent duplicate short URLs.  
-- Test **Firestore security rules** to ensure only valid writes are allowed.  
+**🎯 Milestone:** Successfully store and retrieve URLs in Firestore.
 
----
-
-### **📅 Milestone 4: URL Redirection & Retrieval (3 Hours)**
-✅ Extract **short code from URL (`/abc123`)**.  
-✅ Query Firebase for the matching URL.  
-✅ Redirect users to the **original site**.  
-
-**🎯 Milestone Goal:** Users can **click a shortened link** and be redirected properly.
-
-🎁 **Bonus:**  
-- Implement a **custom 404 page** for missing links.  
-- Add **basic access logging** (e.g., count how many times a short link is clicked).  
+### **🎁 Bonus Tasks:**
+✅ Implement a **shortcode collision** check to prevent duplicate short URLs.
+- Experiment with **Firestore security rules**.
 
 ---
 
-### **📅 Milestone 5: Implement Password Protection (6 Hours)**
-✅ Modify Firebase schema to **store passwords** securely.  
-✅ Add a **checkbox** in the UI to enable password protection.  
-✅ Implement **SHA-256 password hashing** before storing in Firebase.  
-✅ Require users to **enter the correct password** before redirection.  
+## **📅 Day 3: Implementing URL Retrieval & Redirection (3h)**
+### **🔹 Priority: CRITICAL**  
+ Create a Firebase **Cloud Function** to handle redirections.  
+ Extract **short code** from URL (`/abc123`).  
+ Query Firestore for the matching URL.  
+ Return a **302 Redirect response**.
 
-**🎯 Milestone Goal:** Users can **optionally secure** their short links.  
+**🎯 Milestone:** Entering a shortened URL redirects the user to the original site.
 
-🎁 **Bonus:**  
-- Implement a **brute-force delay** (e.g., if 3 failed attempts occur, the link locks temporarily).  
-
----
-
-### **📅 Milestone 6: Implement Expiration (Self-Deletion) (3 Hours)**
-✅ Store **timestamps** when short links are created.  
-✅ Modify retrieval logic to **check if the link is older than 12 hours**.  
-✅ If expired, **delete the entry from Firebase** and display an error.  
-
-**🎯 Milestone Goal:** Expired links **automatically remove themselves from the database**.
-
-🎁 **Bonus:**  
-- Implement a **one-time-use mode** (where links expire after the first access).  
+### **🎁 Bonus Tasks:**
+- Display a **custom 404 error page** for missing links.
+- Implement **analytics (number of clicks per short link)**.
 
 ---
 
-### **📅 Milestone 7: Copy-to-Clipboard & UI Enhancements (3 Hours)**
-✅ Add a **"Copy" button** next to the shortened URL.  
-✅ Use `navigator.clipboard.writeText()` to copy the link.  
-✅ Improve UI responsiveness with **CSS tweaks**.  
+## **📅 Day 4: Adding Password Protection (3h)**
+### **🔹 Priority: HIGH**  
+ Modify Firestore schema to **store passwords** securely.  
+ Add a **password input field** in the UI.  
+ Implement **SHA-256 password hashing**.  
+ Require a 5-digit password (PIN) before redirection (if set by user).
 
-**🎯 Milestone Goal:** Make the **user experience smoother and faster**.  
+**🎯 Milestone:** Users can protect shortened links with a password.
 
-🎁 **Bonus:**  
-- Add a **small graphical effect** when copying.  
+### **🎁 Bonus Tasks:**
+- Add **automatic PIN generation** option for users who don’t want to create their own.
+- Implement a **brute-force delay** (e.g., if 3 failed PIN attempts occur in a row, the link locks for 10 minutes).
 
 ---
 
-### **📅 Milestone 8: Final Deployment & Documentation (3 Hours)**
-✅ Deploy to **GitHub Pages or Netlify**.  
-✅ Write a **detailed README** (setup guide, features, security).  
-✅ Ensure the **project is structured and well-commented**.  
+## **📅 Day 5: Implementing Expiry (Self-Deletion) (3h)**
+### **🔹 Priority: MEDIUM**  
+ Store **timestamp** (`createdAt: Timestamp.now()`).  
+ Modify Cloud Function to **check expiration (12h limit)**.  
+ Delete expired links **before redirecting**.  
+ Display "This link has expired!" for expired URLs.
+
+**🎯 Milestone:** Expired links are automatically deleted.
+
+### **🎁 Bonus Tasks:**
+- Implement a **one-time-use mode**, where links expire after the first access instead of a time limit.
+- Add a **notification system** to inform users how long their link will remain active before expiration.
+
+---
+
+## **📅 Day 6: Securing the App (3h)**
+### **🔹 Priority: CRITICAL**  
+ Implement **brute-force protection** (3 password attempts max).  
+ Prevent bots from flooding the database (rate-limiting).
+
+**🎯 Milestone:** App security is enhanced.
+
+### **🎁 Bonus Tasks:**
+- Implement **self-destructing error messages** (e.g., invalid PIN attempts will disappear after 5 seconds instead of being stored).
+- Add a **honeypot trap** for bots.
+
+---
+
+## **📅 Day 7: Improving UI & UX (3h)**
+### **🔹 Priority: HIGH**  
+ Enhance CSS for a **cleaner, responsive UI**.  
+ Add **success/error messages** for user actions.  
+ Implement **copy-to-clipboard** feature for short URLs.
+
+**🎯 Milestone:** The app has a polished and user-friendly interface.
+
+### **🎁 Bonus Tasks:**
+- Add **animations** for smooth transitions.
+- Introduce a **QR code generator for each short URL**.
+
+---
+
+## **📅 Day 8: Testing & Debugging (3h)**
+### **🔹 Priority: HIGH**  
+ Test **edge cases** (invalid passwords, missing URLs, expired links).  
+ Fix **UI bugs** and console errors.  
+ Ensure proper **Firebase security rules** are in place.
+
+**🎯 Milestone:** A stable, bug-free application.
+
+### **🎁 Bonus Tasks:**
+- Perform **browser compatibility testing**.
+- Write **unit tests** for JavaScript functions.
+
+---
+
+## **📅 Day 9: Deployment & Documentation (3h)**
+### **🔹 Priority: CRITICAL**  
+ Deploy the app (Firebase Hosting or custom domain).  
+ Write a **detailed README** (setup guide, features, security).  
+ Create **GitHub repository** and push all code.
+
+**🎯 Milestone:** Live working app with full documentation.
+
+### **🎁 Bonus Tasks:**
+- Record a **short video demo**.
+- Write a **blog post about the project**.
+
+---
+
+## **📅 Day 10: Final Review & Extra Features (3h)**
+### **🔹 Priority: LOW** (If Everything is Complete)
+ Optimize JavaScript code for **performance improvements**.  
+ Add **multi-use link support** (same short URL for different users).  
+ Refactor database structure for **scalability**.
+
+**🎯 Milestone:** Fully complete & polished project.
+
+### **🎁 Bonus Tasks:**
+- Implement **custom alias support** (e.g., `/my-custom-url` instead of `/abc123`).
+- Experiment with **progressive web app (PWA) features**.
+
+---
+
+Total Project Time: **30 Hours**  
 
 ---
 

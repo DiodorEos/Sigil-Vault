@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Sigil Vault</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Sigil Vault</h1>
+        <h2>Best URL Shortener</h2>
+        <br>
+        <label for="given_url">Enter a URL: </label>
+        <input type="url" name="url" id="given_url" placeholder="https://example.com">
+        <br><br> 
+        <button type="button" id="btn" data-clipboard-target=".shortened_paragraph">Shorten!</button>
+        <br>
+        <p class="shortened_paragraph" id="text"></p>
+        <br><br>
+        <p id="extraParagraph"></p>
+    </div>
+
+    <!-- Load Firebase script, then script.js -->
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
