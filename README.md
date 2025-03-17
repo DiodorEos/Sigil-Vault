@@ -49,7 +49,7 @@ Each milestone represents **a distinct phase** of the project, **ensuring progre
 ✅ Create a Firebase **Firestore database**.  
 ✅ Set up Firebase project & API key in `script.js`.
 
-✅ Store `{ shortCode: "abc123", originalUrl: "https://example.com" }` in Firestore.
+✅ Store `{ shortCode: "abc123", originalUrl: "https://example.com" }` in Firestore.<br />
  **Retrieve and log stored URLs** from Firestore.
 
 **🎯 Milestone:** Successfully store and retrieve URLs in Firestore.
