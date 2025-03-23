@@ -56,7 +56,7 @@ While this is a **personal and academic project**, it is also an **opportunity t
 ## **📌 Setup Instructions**
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/YOUR-USERNAME/Sigil-Vault.git
+git clone https://github.com/DiodorEos/Sigil-Vault.git
 cd Sigil-Vault
 ```
 ### **2️⃣ Install Dependencies**
@@ -71,11 +71,39 @@ DB_DATABASE=your_database
 DB_USERNAME=your_user
 DB_PASSWORD=your_password
 ```
-### **4️⃣ Run the Application (Local Testing)**
+### **4️⃣ Set Up the Database**
+You need to set up your database schema. Create the database specified in your .env file. If it's not already created, do so manually or via a SQL script. Keep in mind, that the following script may be outdated as I add more features to the project, like PIN security, encryption or self-expiring urls.
+
+To set up the required tables, run the following SQL script:
+```sql
+-- Database: `your_database_name`
+CREATE TABLE IF NOT EXISTS `urls` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `original_url` VARCHAR(2048) NOT NULL,
+  `shortcode` VARCHAR(6) NOT NULL UNIQUE,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Optional: Index for performance optimization
+CREATE INDEX shortcode_index ON urls(shortcode);
+```
+This script creates a table called urls with the necessary columns (id, original_url, shortcode, created_at), as well as a unique constraint on the shortcode.
+### **5️⃣ Run the Application (Local Testing)**
 ```bash
 php -S localhost:8000
 ```
 Visit http://localhost:8000 to see it in action.
+
+### **Dependencies**
+Composer Dependencies: The project requires the following dependencies:
+
+vlucas/phpdotenv: For managing environment variables from the .env file.
+mysqli: For MySQL database interaction (included by default in PHP).
+
+If you encounter issues with dependencies, check your composer.json and ensure everything is up-to-date with the following command:
+```bash
+composer update
+```
 
 ---
 
