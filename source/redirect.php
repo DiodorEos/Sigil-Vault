@@ -1,11 +1,15 @@
 <?php
 header('Content-Type: application/json'); // Set the content type to JSON
+// Load the environment variables
+require_once __DIR__ . '/vendor/autoload.php'; // Autoload Composer dependencies
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load(); // Load the .env file
 // Database connection
-$host = "127.0.0.1";
-$username = "u263186678_diodoreos";
-$password = "+E4Th3D34l!?0";
-$database = "u263186678_NeoSigilVault";
+$host = $_ENV['DB_HOST'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$database = $_ENV['DB_NAME'];
 
 $conn = new mysqli($host, $username, $password, $database);
 
