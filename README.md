@@ -80,4 +80,4 @@ Visit http://localhost:8000 to see it in action.
 ---
 
 ## **📌 License**
-This project is licensed under the MIT License – feel free to use and modify it.
+This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html).
