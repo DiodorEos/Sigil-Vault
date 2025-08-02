@@ -44,9 +44,7 @@ While this was a **personal and academic project**, it is also an **opportunity 
 | **PHP** | Core backend logic, URL shortening & redirection         |
 | **MySQL**        | Database storage for URL mappings                         |
 | **JavaScript**   | Frontend interactivity & clipboard functions               |
-| **CSS (vanilla)** | UI/UX design        |
-| **PHP dotenv**   | Environment variable management for security              |
-| **AES-128 Encryption** | Secure storage of PIN-protected URLs (TODO)         |
+| **CSS** | UI/UX design        |
 
 
 
