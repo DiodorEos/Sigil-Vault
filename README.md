@@ -12,19 +12,21 @@ While this was a **personal and academic project**, it is also an **opportunity 
 
 ---
 
-## **📌 Current Features (Completed ✅)**
-✅ **Shortens URLs into unique 6-character codes.**  
-✅ **Validates URLs before shortening.**  
-✅ **Stores URL mappings in a MySQL database.**  
-✅ **Prevents duplicate shortcodes for the same URL.**  
-✅ **Implements basic timestamp tracking for entries.**  
-✅ **Redirects shortcodes to their original URL.**  
-✅ **Minimal DOM manipulation for a clean UI.**  
-✅ **Environment variables (.env) configured for security.**  
-✅ **Project uploaded to GitHub for showcasing.** 
-✅ **UI/UX complete.**
-✅ **Optional PIN protection integrated.**
-✅ **Robots.txt and honeypot form included.**
+## **📌 Current Features**
+### *Functionality Flow*  🔧
+🔸 Shortens URLs into unique 6-character codes.  
+🔸 Prevents duplicate shortcodes for the same URL.  
+🔸 Optional PIN protection integrated.  
+🔸 Quickly redirects shortcodes to their original URL.
+### *Structure Basis*  🧱 
+🔸 Stores URL mappings in a MySQL database.  
+🔸 Minimal DOM manipulation for a clean UI.  
+🔸 UI/UX completed.  
+🔸 Project uploaded to GitHub for showcasing.  
+### *Security Measures*  🔐
+🔸 Validates URLs before shortening.  
+🔸 Environment variables (.env) configured for security.  
+🔸 Robots.txt and honeypot form included.
 
 ---
 
@@ -38,17 +40,17 @@ While this was a **personal and academic project**, it is also an **opportunity 
 
 | **Technology**  	| **Purpose** 						                                      |
 |-----------------|-----------------------------------------------------------|
-| **PHP (Vanilla)** | Core backend logic, URL shortening & redirection         |
+| **PHP** | Core backend logic, URL shortening & redirection         |
 | **MySQL**        | Database storage for URL mappings                         |
 | **JavaScript**   | Frontend interactivity & clipboard functions               |
-| **CSS Framework** (TBD) | UI/UX improvements (Tailwind or Bootstrap)        |
+| **CSS (vanilla)** | UI/UX design        |
 | **PHP dotenv**   | Environment variable management for security              |
 | **AES-128 Encryption** | Secure storage of PIN-protected URLs (TODO)         |
 
 
 
 ## **📌 Project Status**
-🚀 **Live Version:** ✅ [https://sglvt.com/](https://sglvt.com/)  
+🚀 **Live Version:** [https://sglvt.com/](https://sglvt.com/)  
 ⚙️ **Next Steps:** Complete the TODOs.  
 
 ---
