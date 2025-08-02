@@ -23,6 +23,7 @@ While this was a **personal and academic project**, it is also an **opportunity 
 🔸 Minimal DOM manipulation for a clean UI.  
 🔸 UI/UX completed.  
 🔸 Project uploaded to GitHub for showcasing.  
+🔸 Custom 404 page.  
 ### *Security Measures*  🔐
 🔸 Validates URLs before shortening.  
 🔸 Environment variables (.env) configured for security.  
