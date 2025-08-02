@@ -56,4 +56,6 @@ While this was a **personal and academic project**, it is also an **opportunity 
 ---
 
 ## **📌 License**
-This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html).
+This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://spdx.org/licenses/CC-BY-NC-SA-4.0.html).  
+All icons used were created and shared by [Icons8](https://icons8.com/).  
+The web app's logo was created by [Canva's AI model](https://www.canva.com/ai).  
