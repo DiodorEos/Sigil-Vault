@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>404 – Sigil Vault</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, follow">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #121C2B;
+			color: #F0F2F5;
+			font-family: 'Segoe UI', sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		#notfound {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			background: #243545;
+			border-radius: 1rem;
+			padding: 40px 30px;
+			box-shadow: 0 0 14px #e67c3a;
+			max-width: 400px;
+			width: 90%;
+		}
+
+		.notfound-404 h1 {
+			font-size: 96px;
+			margin: 0;
+			color: #52e4d2;
+			text-shadow: 0 0 8px #52e4d2;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: 300;
+			margin-top: 10px;
+			margin-bottom: 30px;
+			color: #ccc;
+		}
+
+		button {
+			padding: 12px 20px;
+			border: none;
+			border-radius: 10px;
+			background: #960018;
+			color: white;
+			font-size: 15px;
+			cursor: pointer;
+			box-shadow: 0 0 12px rgba(198, 58, 58, 0.3);
+			transition: all 0.2s ease-in-out;
+		}
+
+		button:hover {
+			background: #B02025;
+			box-shadow: 0 0 18px rgba(200, 70, 58, 0.5);
+		}
+
+	</style>
+</head>
+<body>
+<div id="notfound">
+	<div class="notfound-404">
+		<h1>404</h1>
+	</div>
+	<h2>The page you requested could not be found.</h2>
+	<form class="notfound-search">
+		<button type="button" onclick="location.href='https://sglvt.com'">Back to Sigil Vault</button>
+	</form>
+</div>
+</body>
+</html>
